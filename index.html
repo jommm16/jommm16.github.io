@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panama Canal Operations</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #1f2937;
+    }
+
+    header {
+      background: #0b1f33;
+      color: white;
+      padding: 25px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    header p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .hero {
+      background: white;
+      padding: 70px 50px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #0b1f33;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #64748b;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #0b1f33;
+    }
+
+    .card p {
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background: #0b1f33;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 60px;
+      background: #0b1f33;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      header {
+        padding: 20px;
+      }
+
+      .hero {
+        padding: 50px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <h1>Panama Canal Operations</h1>
+      <p>Operational Information & Analysis</p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Panama Canal Operations</h2>
+
+    <p>
+      Welcome to our operational platform, designed to provide
+      clear and useful information regarding Panama Canal
+      transits, operations and related services.
+    </p>
+
+    <a href="#" class="button">Explore Information</a>
+  </section>
+
+  <div class="container">
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Canal Updates</h3>
+        <p>
+          Current information and important updates
+          related to Panama Canal operations.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Vessel Operations</h3>
+        <p>
+          Operational information, transit status
+          and vessel-related details.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Reports & Analysis</h3>
+        <p>
+          Data, statistics and analysis to support
+          operational decision-making.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    Panama Canal Operations © 2026
+  </footer>
+
+</body>
+</html>
