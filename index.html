@@ -3,81 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Encuesta de Satisfacción</title>
+  <title>Encuesta de Experiencia</title>
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f7f4f0; /* Fondo beige cálido y elegante */
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0;
       padding: 20px;
+      color: #2c2c2c;
     }
     .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      max-width: 420px;
+      background: #ffffff;
+      padding: 35px 25px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      max-width: 400px;
       width: 100%;
       text-align: center;
+      border: 1px solid #eae5df;
     }
-    h2 { color: #d63384; margin-bottom: 20px; font-size: 22px; }
+    h2 { 
+      color: #6b2d5c; /* Vino tinto elegante */
+      margin-bottom: 8px; 
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 25px;
+    }
     .step { display: none; }
     .step.active { display: block; }
     
-    .question { margin-bottom: 22px; text-align: left; }
-    label { display: block; margin-bottom: 8px; color: #444; font-weight: 600; font-size: 14px; }
+    .question { 
+      margin-bottom: 20px; 
+      text-align: left; 
+    }
+    label { 
+      display: block; 
+      margin-bottom: 8px; 
+      color: #444; 
+      font-weight: 600; 
+      font-size: 14px; 
+    }
     
     select {
       width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background-color: #f9f9f9;
+      padding: 12px 15px;
+      border: 1.5px solid #dcd6cd;
+      border-radius: 12px;
+      background-color: #faf8f5;
       font-size: 14px;
       color: #333;
       outline: none;
+      transition: all 0.3s ease;
     }
-    select:focus { border-color: #d63384; }
+    select:focus { 
+      border-color: #6b2d5c; 
+    }
 
     .btn-main {
-      background-color: #d63384;
+      background: linear-gradient(135deg, #6b2d5c 0%, #4a1e3f 100%);
       color: white;
       border: none;
-      padding: 12px 28px;
-      border-radius: 25px;
+      padding: 14px 28px;
+      border-radius: 50px;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s;
-      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(107, 45, 92, 0.2);
+      transition: transform 0.2s;
+      margin-top: 10px;
       width: 100%;
     }
-    .btn-main:hover { background-color: #b8226c; }
-
-    .proposal-btns {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
+    .btn-main:active {
+      transform: scale(0.98);
     }
 
     #timer {
-      font-size: 20px;
-      font-weight: bold;
-      color: #d63384;
-      margin-top: 20px;
+      font-size: 19px;
+      font-weight: 700;
+      color: #6b2d5c;
+      margin: 20px 0;
       line-height: 1.6;
-      background: #fff0f6;
-      padding: 15px;
-      border-radius: 12px;
-      border: 1px dashed #d63384;
+      background: #fdf8f5;
+      border: 1px solid #f0e6df;
+      padding: 18px;
+      border-radius: 16px;
+    }
+
+    /* Estilo para la primera foto */
+    .photo-container {
+      width: 100%;
+      max-height: 250px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      border: 1px solid #eee;
+    }
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
   </style>
 </head>
@@ -88,38 +126,38 @@
     <!-- PANTALLA 1: Calificación (1 al 5) -->
     <div id="step1" class="step active">
       <h2>Encuesta de Experiencia 📝</h2>
-      <p style="font-size: 13px; color: #666; margin-bottom: 20px;">(Califica del 1 al 5, donde 5 es muy satisfactorio)</p>
+      <p class="subtitle">(Califica del 1 al 5, donde 5 es muy satisfactorio)</p>
       
       <div class="question">
         <label>1. ¿Cómo calificas la experiencia de hoy?</label>
-        <select id="p1">
-          <option value="5">5 - Muy satisfactorio</option>
-          <option value="4">4 - Excelente</option>
-          <option value="3">3 - Bueno</option>
-          <option value="2">2 - Regular</option>
-          <option value="1">1 - Deficiente</option>
+        <select>
+          <option>5 - Muy satisfactorio</option>
+          <option>4 - Excelente</option>
+          <option>3 - Bueno</option>
+          <option>2 - Regular</option>
+          <option>1 - Deficiente</option>
         </select>
       </div>
 
       <div class="question">
         <label>2. ¿Qué tal te pareció la comida?</label>
-        <select id="p2">
-          <option value="5">5 - Deliciosa / Muy satisfactorio</option>
-          <option value="4">4 - Muy buena</option>
-          <option value="3">3 - Aceptable</option>
-          <option value="2">2 - Regular</option>
-          <option value="1">1 - Mala</option>
+        <select>
+          <option>5 - Deliciosa / Muy satisfactorio</option>
+          <option>4 - Muy buena</option>
+          <option>3 - Aceptable</option>
+          <option>2 - Regular</option>
+          <option>1 - Mala</option>
         </select>
       </div>
 
       <div class="question">
         <label>3. ¿Qué tan interesante te pareció esta experiencia?</label>
-        <select id="p3">
-          <option value="5">5 - Súper interesante / Muy satisfactorio</option>
-          <option value="4">4 - Bastante interesante</option>
-          <option value="3">3 - Normal</option>
-          <option value="2">2 - Un poco aburrida</option>
-          <option value="1">1 - Nada interesante</option>
+        <select>
+          <option>5 - Súper interesante / Muy satisfactorio</option>
+          <option>4 - Bastante interesante</option>
+          <option>3 - Normal</option>
+          <option>2 - Un poco aburrida</option>
+          <option>1 - Nada interesante</option>
         </select>
       </div>
 
@@ -129,6 +167,7 @@
     <!-- PANTALLA 2: Opciones Jocosas -->
     <div id="step2" class="step">
       <h2>Evaluación de Futuro 🤔</h2>
+      <p class="subtitle">Sinceridad ante todo</p>
 
       <div class="question">
         <label>1. ¿Repetirías esta experiencia?</label>
@@ -148,30 +187,34 @@
 
       <div class="question">
         <label>3. ¿Quieres continuar seriamente con esta experiencia o aventura?</label>
-        <select id="p6">
+        <select id="p3_answer">
           <option value="si">Sí</option>
           <option value="que_significa">¿Qué significa esto?</option>
         </select>
       </div>
 
-      <button class="btn-main" onclick="handleStep2Next()">Siguiente ➡️</button>
+      <button class="btn-main" onclick="nextStep(3)">Siguiente ➡️</button>
     </div>
 
     <!-- PANTALLA 3: La Pregunta Directa -->
     <div id="step3" class="step">
       <h2>Llegamos al punto importante... 😳❤️</h2>
-      <p style="font-size: 18px; color: #333; margin: 25px 0;">¿Quieres ser mi novio?</p>
+      <p style="font-size: 18px; color: #444; margin: 30px 0 20px 0; font-weight: 500;">¿Quieres ser mi novio?</p>
       
-      <div class="proposal-btns">
-        <button class="btn-main" onclick="acceptProposal()">¡SÍ! 🥰</button>
-      </div>
+      <button class="btn-main" onclick="acceptProposal()">¡SÍ! 🥰</button>
     </div>
 
-    <!-- PANTALLA 4: Contador Infinito -->
+    <!-- PANTALLA 4: Contador Infinito + Foto al final -->
     <div id="step4" class="step">
       <h2>¡Oficialmente Novios! 🎉❤️</h2>
-      <p style="color: #555;">Llevamos juntos exactamente:</p>
+      
+      <p style="color: #666; font-size: 14px; margin-top: 10px;">Llevamos juntos exactamente:</p>
       <div id="timer">Cargando tiempo...</div>
+
+      <!-- Primera foto guardada -->
+      <div class="photo-container">
+        <img src="foto.jpg" alt="Nuestra primera foto" onerror="this.style.display='none'">
+      </div>
     </div>
 
   </div>
@@ -182,14 +225,7 @@
       document.getElementById('step' + stepNumber).classList.add('active');
     }
 
-    function handleStep2Next() {
-      const q3Value = document.getElementById('p6').value;
-      // Tanto si elige "Sí" como si elige "¿Qué significa esto?", lo llevamos a la pantalla 3 de la propuesta
-      nextStep(3);
-    }
-
     function acceptProposal() {
-      // Guardar la fecha exacta en la memoria del navegador del usuario
       if (!localStorage.getItem('startDate')) {
         localStorage.setItem('startDate', new Date().getTime());
       }
@@ -210,11 +246,10 @@
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
         document.getElementById('timer').innerHTML = 
-          `<b>${days}</b> días, <b>${hours}</b> horas,<br><b>${minutes}</b> minutos y <b>${seconds}</b> segundos`;
+          `<b>${days}</b> días, <b>${hours}</b> hs,<br><b>${minutes}</b> min y <b>${seconds}</b> seg`;
       }, 1000);
     }
 
-    // Verificar si ya aceptó previamente para llevarlo directamente al contador
     window.onload = function() {
       if (localStorage.getItem('startDate')) {
         nextStep(4);
