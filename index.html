@@ -3,185 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panama Canal Operations</title>
-
+  <title>Encuesta de Satisfacción</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      color: #1f2937;
-    }
-
-    header {
-      background: #0b1f33;
-      color: white;
-      padding: 25px 50px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+      min-height: 100vh;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
     }
-
-    header h1 {
-      font-size: 24px;
-    }
-
-    header p {
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    .hero {
-      background: white;
-      padding: 70px 50px;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-      color: #0b1f33;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #64748b;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
     .card {
       background: white;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
       text-align: center;
     }
-
-    .card h3 {
-      margin-bottom: 15px;
-      color: #0b1f33;
+    h2 { color: #d63384; margin-bottom: 20px; }
+    .step { display: none; }
+    .step.active { display: block; }
+    .question { margin-bottom: 20px; text-align: left; }
+    label { display: block; margin-bottom: 8px; color: #555; font-weight: 600; }
+    select, input[type="text"] {
+      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;
     }
-
-    .card p {
-      color: #64748b;
-      line-height: 1.5;
+    button {
+      background-color: #d63384; color: white; border: none; padding: 12px 24px;
+      border-radius: 25px; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 15px;
     }
-
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 28px;
-      background: #0b1f33;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    footer {
-      margin-top: 60px;
-      background: #0b1f33;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-size: 13px;
-    }
-
-    @media (max-width: 800px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h2 {
-        font-size: 32px;
-      }
-
-      header {
-        padding: 20px;
-      }
-
-      .hero {
-        padding: 50px 20px;
-      }
-    }
+    button:hover { background-color: #b8226c; }
+    .spicy-text { font-size: 18px; color: #333; line-height: 1.5; font-style: italic; margin-bottom: 25px; }
+    .proposal-btns { display: flex; justify-content: center; gap: 15px; position: relative; min-height: 50px; }
+    #timer { font-size: 22px; font-weight: bold; color: #d63384; margin-top: 20px; line-height: 1.6; }
   </style>
 </head>
-
 <body>
 
-  <header>
-    <div>
-      <h1>Panama Canal Operations</h1>
-      <p>Operational Information & Analysis</p>
-    </div>
-  </header>
-
-  <section class="hero">
-    <h2>Panama Canal Operations</h2>
-
-    <p>
-      Welcome to our operational platform, designed to provide
-      clear and useful information regarding Panama Canal
-      transits, operations and related services.
-    </p>
-
-    <a href="#" class="button">Explore Information</a>
-  </section>
-
-  <div class="container">
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>Canal Updates</h3>
-        <p>
-          Current information and important updates
-          related to Panama Canal operations.
-        </p>
+  <div class="card">
+    <div id="step1" class="step active">
+      <h2>Encuesta de Calidad 📋</h2>
+      <div class="question">
+        <label>1. ¿Qué tan buena ha sido tu experiencia saliendo conmigo?</label>
+        <select>
+          <option>Excelente (10/10)</option>
+          <option>Increíble (100/10)</option>
+          <option>La mejor de mi vida</option>
+        </select>
       </div>
-
-      <div class="card">
-        <h3>Vessel Operations</h3>
-        <p>
-          Operational information, transit status
-          and vessel-related details.
-        </p>
+      <div class="question">
+        <label>2. ¿El nivel de besos y tratos ha sido el adecuado?</label>
+        <select>
+          <option>Sí, pero exijo más</option>
+          <option>Totalmente perfecto</option>
+        </select>
       </div>
-
-      <div class="card">
-        <h3>Reports & Analysis</h3>
-        <p>
-          Data, statistics and analysis to support
-          operational decision-making.
-        </p>
+      <div class="question">
+        <label>3. ¿Te gustaría repetir citas indefinidamente?</label>
+        <select>
+          <option>Obviamente sí</option>
+          <option>Definitivamente sí</option>
+        </select>
       </div>
-
+      <button onclick="nextStep(2)">Siguiente ➡️</button>
     </div>
 
+    <div id="step2" class="step">
+      <h2>Resultado del Análisis 🔥</h2>
+      <p class="spicy-text">"Según tus respuestas, el sistema detecta una química fuera de control y un nivel de compatibilidad peligrosamente alto... Ya dejamos la etapa de prueba, así que toca formalizar."</p>
+      <button onclick="nextStep(3)">Continuar 😏</button>
+    </div>
+
+    <div id="step3" class="step">
+      <h2>¿Quieres ser mi novia? ❤️</h2>
+      <div class="proposal-btns">
+        <button onclick="acceptProposal()">¡SÍ, ACEPTO! 🥰</button>
+      </div>
+    </div>
+
+    <div id="step4" class="step">
+      <h2>¡Oficialmente Novios! 🎉❤️</h2>
+      <p>Llevamos juntos exactamente:</p>
+      <div id="timer"></div>
+    </div>
   </div>
 
-  <footer>
-    Panama Canal Operations © 2026
-  </footer>
+  <script>
+    function nextStep(stepNumber) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.getElementById('step' + stepNumber).classList.add('active');
+    }
 
+    function acceptProposal() {
+      // Guardar fecha de inicio si no existe
+      if (!localStorage.getItem('startDate')) {
+        localStorage.setItem('startDate', new Date().getTime());
+      }
+      nextStep(4);
+      startTimer();
+    }
+
+    function startTimer() {
+      const startDate = parseInt(localStorage.getItem('startDate'));
+      setInterval(() => {
+        const now = new Date().getTime();
+        const difference = now - startDate;
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById('timer').innerHTML = 
+          `${days} días, ${hours} horas,<br>${minutes} minutos y ${seconds} segundos`;
+      }, 1000);
+    }
+
+    // Mantener el contador si vuelve a visitar la página despues de aceptar
+    window.onload = function() {
+      if (localStorage.getItem('startDate')) {
+        nextStep(4);
+        startTimer();
+      }
+    };
+  </script>
 </body>
 </html>
